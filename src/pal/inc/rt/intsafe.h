@@ -25,7 +25,7 @@ extern "C" {
 #endif
 #define UnsignedMultiply128 _umul128
 ULONG64
-UnsignedMultiply128 (
+_umul128 (
     IN ULONG64  Multiplier,
     IN ULONG64  Multiplicand,
     OUT ULONG64 *HighProduct
