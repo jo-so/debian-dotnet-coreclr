@@ -101,7 +101,7 @@ void DacDbiArrayList<T>::Alloc(int nElements)
     Dealloc();
     if (nElements > 0)
     {
-        m_pList = new(forDbi) T[(size_t)nElements];
+        m_pList = new T[(size_t)nElements];
         m_nEntries = nElements;
     }
 }
