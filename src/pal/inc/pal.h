@@ -5303,7 +5303,6 @@ inline WCHAR *PAL_wcsstr(WCHAR *_S, const WCHAR *_P)
 }
 #endif
 
-#if 0
 /*++
 Function:
 _rotl
@@ -5321,14 +5320,12 @@ unsigned int __cdecl _rotl(unsigned int value, int shift)
     retval = (value << shift) | (value >> (sizeof(int) * CHAR_BIT - shift));
     return retval;
 }
-#endif
 
 // On 64 bit unix, make the long an int.
 #ifdef BIT64
 #define _lrotl _rotl
 #endif // BIT64
 
-#if 0
 /*++
 Function:
 _rotr
@@ -5346,7 +5343,6 @@ unsigned int __cdecl _rotr(unsigned int value, int shift)
     retval = (value >> shift) | (value << (sizeof(int) * CHAR_BIT - shift));
     return retval;
 }
-#endif
 
 PALIMPORT int __cdecl abs(int);
 #ifndef PAL_STDCPP_COMPAT
