@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+DOTNET_VERSION = 2.0.0-preview2
+ARCH = x64
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+#	it's all done by build.sh
+
+override_dh_auto_build-arch:
+	./build.sh clang3.9 $(ARCH) release
+
+D=debian/dotnet-coreclr-2.0/usr/lib/dotnet/shared/Microsoft.NETCore.App/$(DOTNET_VERSION)
+
+override_dh_auto_install:
+	mkdir -p $D
+	for i in libclrjit.so libcoreclr.so libcoreclrtraceptprovider.so libdbgshim.so \
+	  libmscordaccore.so libmscordbi.so libsosplugin.so libsos.so sosdocsunix.txt \
+	  System.Globalization.Native.so; do \
+	    cp bin/Product/Linux.$(ARCH).Release/$$i $D || exit 1; \
+	done
+
+override_dh_auto_clean:
+	rm -rf bin

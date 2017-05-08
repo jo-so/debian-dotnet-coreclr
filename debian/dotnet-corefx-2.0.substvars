@@ -1,0 +1,3 @@
+shlibs:Depends=libc6 (>= 2.14), libcurl3 (>= 7.28.0), libgcc1 (>= 1:3.0), libgssapi-krb5-2 (>= 1.14+dfsg), libssl1.0.2 (>= 1.0.2d), libstdc++6 (>= 4.1.1), zlib1g (>= 1:1.1.4)
+misc:Depends=
+misc:Pre-Depends=
